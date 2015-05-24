@@ -1,0 +1,25 @@
+.output-row {
+	display: flex;
+	margin: 2px 0;
+}
+
+.output-label {
+	flex: 0.2;
+}
+
+.output-value {
+	flex: 1;
+	font-family: monospace;
+}
+
+#output-preview {
+	width: 50px;
+	height: 50px;
+}
+
+.gradient {
+	display: block;
+	margin: 10px 0;
+	border: 1px solid #fff;
+	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
+}

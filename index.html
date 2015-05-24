@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<title>Color</title>
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="http://underscorejs.org/underscore-min.js"></script>
+<script src="https://cdn.rawgit.com/j-/ok/8a60bc4/ok.js"></script>
+<script src="https://cdn.rawgit.com/j-/ok/8a60bc4/ok.views.js"></script>
+<script src="https://cdn.rawgit.com/j-/ok/8a60bc4/ok.dollarview.js"></script>
+
+<script src="https://cdn.rawgit.com/j-/color.js/b9e4d92/color.js"></script>
+
+<script src="scripts/app.js"></script>
+<script src="scripts/views/base.js"></script>
+<script src="scripts/views/gradient.js"></script>
+<script src="scripts/views/app.js"></script>
+<script src="scripts/views/input.js"></script>
+<script src="scripts/views/output.js"></script>
+
+<script src="scripts/main.js"></script>
+
+<div id="app" class="container">
+
+	<div class="page-header">
+		<h1>Color</h1>
+	</div>
+
+	<input id="color-input" class="form-control input-lg" type="text">
+
+	<hr>
+
+	<div class="panel panel-default panel-body">
+		<button id="randomize-color" type="button" class="btn btn-default">Random</button>
+	</div>
+
+	<hr>
+
+	<div id="output">
+		<h2>Preview</h2>
+		<div id="output-preview" class="thumbnail"></div>
+
+		<h2>Values</h2>
+		<div class="output-row">
+			<label class="output-label" for="output-red">Red</label>
+			<input id="output-red" class="output-value form-control" readonly>
+		</div>
+		<div class="output-row">
+			<label class="output-label" for="output-green">Green</label>
+			<input id="output-green" class="output-value form-control" readonly>
+		</div>
+		<div class="output-row">
+			<label class="output-label" for="output-blue">Blue</label>
+			<input id="output-blue" class="output-value form-control" readonly>
+		</div>
+		<div class="output-row">
+			<label class="output-label" for="output-hue">Hue</label>
+			<input id="output-hue" class="output-value form-control" readonly>
+		</div>
+		<div class="output-row">
+			<label class="output-label" for="output-saturation">Saturation</label>
+			<input id="output-saturation" class="output-value form-control" readonly>
+		</div>
+		<div class="output-row">
+			<label class="output-label" for="output-lightness">Lightness</label>
+			<input id="output-lightness" class="output-value form-control" readonly>
+		</div>
+		<div class="output-row">
+			<label class="output-label" for="output-string-hex">Hex string</label>
+			<input id="output-string-hex" class="output-value form-control" readonly>
+		</div>
+		<div class="output-row">
+			<label class="output-label" for="output-string-hexshort">Short hex string</label>
+			<input id="output-string-hexshort" class="output-value form-control" readonly>
+		</div>
+		<div class="output-row">
+			<label class="output-label" for="output-string-rgb">RGB string</label>
+			<input id="output-string-rgb" class="output-value form-control" readonly>
+		</div>
+		<div class="output-row">
+			<label class="output-label" for="output-string-rgba">RGBA string</label>
+			<input id="output-string-rgba" class="output-value form-control" readonly>
+		</div>
+
+		<h2>Sliders</h2>
+		<h3>RGB</h3>
+		<div id="sliders-rgb"></div>
+		<h3>HSL</h3>
+		<div id="sliders-hsl"></div>
+	</div>
+</div>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel="stylesheet" href="style/main.css">
