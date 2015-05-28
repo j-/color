@@ -39,6 +39,9 @@ App.BaseView = ok.$View.extend({
 			var args = _.compact([ev, el]);
 			this.$el.off.apply(this.$el, args);
 		}, this);
+	},
+	empty: function () {
+		$(this.$el).children().detach();
 	}
 });
 

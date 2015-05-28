@@ -1,4 +1,4 @@
-(function (root) {
+(function () {
 
 App.InputView = App.BaseView.extend({
 	events: {
