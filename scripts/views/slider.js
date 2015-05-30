@@ -11,6 +11,7 @@ App.SliderView = App.BaseView.extend({
 		_.bindAll(this, 'dragStart', 'dragStop', 'dragUpdate');
 		this.$scrubber = $(document.createElement('div')).addClass('scrubber');
 		this.position = ok.Property.create();
+		this.listenTo(this.position, 'change', this.moveScrubber, this);
 	},
 	render: function () {
 		this.empty();
@@ -36,14 +37,17 @@ App.SliderView = App.BaseView.extend({
 		var width = this.getWidth();
 		var delta = clientX - startX;
 		var clamped = Math.max(Math.min(delta, width), 0);
-		this.$scrubber.css('left', clamped);
-		this.position.set(clamped / width);
+		var value = clamped / width;
+		this.position.set(value);
 	},
 	getLeft: function () {
 		return this.$el.offset().left;
 	},
 	getWidth: function () {
 		return this.$el.width();
+	},
+	moveScrubber: function (prop, value) {
+		this.$scrubber.css('left', (value * 100) + '%');
 	}
 });
 

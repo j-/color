@@ -47,6 +47,12 @@ App.SliderGroupHSLView = App.SliderGroupView.extend({
 			.append(this.saturationGradientView.el)
 			.append(this.lightnessGradientView.el);
 		this.sup('render');
+	},
+	changeValues: function () {
+		var color = this.watch.get('color');
+		this.hueGradientView.position.set(Color.getHue(color) / 360);
+		this.saturationGradientView.position.set(Color.getSaturation(color));
+		this.lightnessGradientView.position.set(Color.getLightness(color));
 	}
 });
 

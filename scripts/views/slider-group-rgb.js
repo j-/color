@@ -45,6 +45,12 @@ App.SliderGroupRGBView = App.SliderGroupView.extend({
 			.append(this.greenGradientView.el)
 			.append(this.blueGradientView.el);
 		this.sup('render');
+	},
+	changeValues: function () {
+		var color = this.watch.get('color');
+		this.redGradientView.position.set(Color.getRed(color) / 0xff);
+		this.greenGradientView.position.set(Color.getGreen(color) / 0xff);
+		this.blueGradientView.position.set(Color.getBlue(color) / 0xff);
 	}
 });
 
