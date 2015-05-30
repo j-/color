@@ -18,7 +18,10 @@ var App = ok.Controller.extend({
 		this.listenTo(this.view, 'change:input', this.handleInputChange);
 	},
 	handleInputChange: function (value) {
-		this.watch.set('color', Color.parse(value));
+		var color = Color.parse(value);
+		if (color !== null) {
+			this.watch.set('color', color);
+		}
 	}
 });
 
