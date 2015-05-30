@@ -2,13 +2,11 @@
 
 App.GradientSliderView = App.SliderView.extend({
 	classNames: ['gradient'],
+	injects: ['stops'],
 	init: function () {
 		this.sup('init', arguments);
 		var color = this.watch.property('color');
-		this.gradient = App.GradientController.create();
-		if (this.stops) {
-			this.gradient.stops = this.stops;
-		}
+		this.gradient = this.create(App.GradientController, {});
 		this.gradient.getValueAtStop = this.getValueAtStop.bind(this);
 		this.listenTo(color, 'change', this.drawBackgroundGradient);
 		this.listenTo(color, 'change', this.updateScrubberColor);
