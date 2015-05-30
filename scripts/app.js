@@ -10,7 +10,7 @@ var App = ok.Controller.extend({
 	watch: State.create(),
 	injects: ['watch'],
 	init: function (options) {
-		this.view = this.create(App.AppView, {});
+		this.view = this.create(App.AppView);
 	},
 	start: function () {
 		this.view.render();

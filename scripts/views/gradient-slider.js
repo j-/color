@@ -6,7 +6,7 @@ App.GradientSliderView = App.SliderView.extend({
 	init: function () {
 		this.sup('init', arguments);
 		var color = this.watch.property('color');
-		this.gradient = this.create(App.GradientController, {});
+		this.gradient = this.create(App.GradientController);
 		this.gradient.getValueAtStop = this.getValueAtStop.bind(this);
 		this.listenTo(color, 'change', this.drawBackgroundGradient);
 		this.listenTo(color, 'change', this.updateScrubberColor);
