@@ -2,6 +2,7 @@
 
 var HueSlider = App.GradientSliderView.extend({
 	stops: 36,
+	ticks: 360,
 	getValueAtStop: function (stop) {
 		var color = this.watch.get('color');
 		var s = Color.getSaturation(color);

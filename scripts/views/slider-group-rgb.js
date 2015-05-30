@@ -1,6 +1,7 @@
 (function () {
 
 var RedSlider = App.GradientSliderView.extend({
+	ticks: 0xff,
 	getValueAtStop: function (stop) {
 		var color = this.watch.get('color');
 		var g = Color.getGreen(color);
@@ -11,6 +12,7 @@ var RedSlider = App.GradientSliderView.extend({
 });
 
 var GreenSlider = App.GradientSliderView.extend({
+	ticks: 0xff,
 	getValueAtStop: function (stop) {
 		var color = this.watch.get('color');
 		var r = Color.getRed(color);
@@ -21,6 +23,7 @@ var GreenSlider = App.GradientSliderView.extend({
 });
 
 var BlueSlider = App.GradientSliderView.extend({
+	ticks: 0xff,
 	getValueAtStop: function (stop) {
 		var color = this.watch.get('color');
 		var r = Color.getRed(color);

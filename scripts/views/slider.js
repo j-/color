@@ -4,6 +4,7 @@ App.SliderView = App.BaseView.extend({
 	classNames: ['slider'],
 	startX: null,
 	position: null,
+	ticks: 100,
 	events: {
 		'mousedown': 'dragStart'
 	},
@@ -38,6 +39,10 @@ App.SliderView = App.BaseView.extend({
 		var delta = clientX - startX;
 		var clamped = Math.max(Math.min(delta, width), 0);
 		var value = clamped / width;
+		// round to nearest tick
+		value *= this.ticks;
+		value = Math.round(value);
+		value /= this.ticks;
 		this.position.set(value);
 	},
 	getLeft: function () {
