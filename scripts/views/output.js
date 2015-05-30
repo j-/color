@@ -11,6 +11,7 @@ App.OutputView = App.BaseView.extend({
 	changeColor: function () {
 		var value = this.watch.get('color');
 		this.$('#output-preview').css('background-color', Color(value));
+		this.$('#output-decimal').val(value);
 		this.$('#output-red').val(Color.getRed(value));
 		this.$('#output-green').val(Color.getGreen(value));
 		this.$('#output-blue').val(Color.getBlue(value));
