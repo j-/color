@@ -10,26 +10,26 @@ App.GradientSliderView = App.SliderView.extend({
 			this.gradient.stops = this.stops;
 		}
 		this.gradient.getValueAtStop = this.getValueAtStop.bind(this);
-		this.listenTo(color, 'change', this.drawGradient);
-		this.listenTo(color, 'change', this.updateScrubber);
-		this.position.on('change', this.updatePosition, this);
+		this.listenTo(color, 'change', this.drawBackgroundGradient);
+		this.listenTo(color, 'change', this.updateScrubberColor);
+		this.position.on('change', this.updateColorValue, this);
 	},
 	render: function () {
 		this.sup('render');
-		this.drawGradient();
-		this.updateScrubber();
+		this.drawBackgroundGradient();
+		this.updateScrubberColor();
 	},
-	drawGradient: function () {
+	drawBackgroundGradient: function () {
 		var width = this.$el.width();
 		var image = this.gradient.toDataURL(width);
 		this.$el.css('backgroundImage', 'url(' + image + ')');
 	},
-	updatePosition: function (prop, stop) {
+	updateColorValue: function (prop, stop) {
 		var color = this.watch.property('color');
 		var value = this.getValueAtStop(stop);
 		color.set(value);
 	},
-	updateScrubber: function () {
+	updateScrubberColor: function () {
 		var position = this.position.get();
 		var value = this.getValueAtStop(position);
 		this.$scrubber.css('backgroundColor', Color.formatRGBAString(value));
