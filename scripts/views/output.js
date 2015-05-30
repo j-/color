@@ -27,7 +27,9 @@ App.OutputView = App.BaseView.extend({
 		this.$('#output-string-hex').val(Color.formatHexString(value));
 		this.$('#output-string-hexshort').val(Color.formatShortHexString(value));
 		this.$('#output-string-rgb').val(Color.formatRGBString(value));
+		this.$('#output-string-rgb-percentage').val(Color.formatRGBPercentString(value));
 		this.$('#output-string-rgba').val(Color.formatRGBAString(value));
+		this.$('#output-string-rgba-percentage').val(Color.formatRGBAPercentString(value));
 		this.$('#output-string-hsl').val(Color.formatHSLString(value));
 		this.$('#output-string-hsla').val(Color.formatHSLAString(value));
 	}
