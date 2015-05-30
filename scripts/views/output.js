@@ -21,6 +21,8 @@ App.OutputView = App.BaseView.extend({
 		this.$('#output-string-hexshort').val(Color.formatShortHexString(value));
 		this.$('#output-string-rgb').val(Color.formatRGBString(value));
 		this.$('#output-string-rgba').val(Color.formatRGBAString(value));
+		this.$('#output-string-hsl').val(Color.formatHSLString(value));
+		this.$('#output-string-hsla').val(Color.formatHSLAString(value));
 	}
 });
 
