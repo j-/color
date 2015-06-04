@@ -14,11 +14,18 @@ App.AppView = App.BaseView.extend({
 		this.slidersView = this.addChildView(App.SlidersView, {
 			watch: this.watch
 		});
+		this.iconView = this.addChildView(App.ColorIcon, {
+			watch: this.watch.property('color')
+		});
 		this.listenTo(this.inputView, 'change', this.handleInputChange);
+		this.listenTo(this.watch, 'change', this.handleColorChange);
 		_.bindAll(this, 'randomizeColor');
 	},
 	handleInputChange: function (value) {
 		this.trigger('change:input', value);
+	},
+	handleColorChange: function () {
+		document.head.appendChild(this.iconView.el);
 	},
 	randomizeColor: function () {
 		this.watch.set('color', Color.random());
