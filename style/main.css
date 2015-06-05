@@ -17,16 +17,23 @@ body {
 
 .output-row {
 	display: flex;
-	margin: 2px 0;
+	margin: 15px 0;
 }
 
 .output-label {
 	width: 20%;
+	line-height: 34px;
+}
+
+.output-label small {
+	float: right;
+	color: #888;
 }
 
 .output-value {
 	flex: 1;
 	font-family: monospace;
+	margin-left: 15px;
 }
 
 #output-preview {
