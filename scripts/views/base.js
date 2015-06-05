@@ -19,6 +19,7 @@ App.BaseView = ok.$View.extend({
 		this.unbindEvents();
 	},
 	bindEvents: function () {
+		this.unbindEvents();
 		var events = this.events;
 		_.forEach(events, function (fnName, signature) {
 			var split = String(signature).split(' ');
