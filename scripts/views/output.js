@@ -3,6 +3,11 @@
 App.OutputView = App.BaseView.extend({
 	init: function () {
 		this.listenTo(this.watch.property('color'), 'change', this.changeColor);
+		this.binaryView = this.addChildView(App.BinaryView, { watch: this.watch.property('color') });
+	},
+	render: function () {
+		this.binaryView.setElement('#output-binary');
+		this.sup('render');
 	},
 	start: function () {
 		this.sup('start');
