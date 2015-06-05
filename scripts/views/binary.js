@@ -27,10 +27,20 @@ App.BinaryView = App.BaseView.extend({
 	},
 	updateColor: function () {
 		var color = this.watch.get();
+		var sig;
 		this.$('.bit').each(function (i) {
-			var $bit = $(this);
 			var bit = color & (1 << (23 - i)) ? 1 : 0;
-			$bit.text(bit);
+			if (i % 8 === 0) {
+				sig = false;
+			}
+			if (bit) {
+				sig = true;
+			}
+			$(this)
+				.text(bit)
+				.toggleClass('bit-0', !bit)
+				.toggleClass('bit-1', bit)
+				.toggleClass('bit-significant', sig);
 		});
 	}
 });

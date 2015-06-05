@@ -49,14 +49,11 @@ body {
 	overflow: hidden;
 }
 
-#output-binary .bit-red {
-	color: hsl(0, 70%, 50%);
-}
+#output-binary .bit-red { color: hsl(0, 70%, 70%); }
+#output-binary .bit-red.bit-significant { color: hsl(0, 70%, 50%); }
 
-#output-binary .bit-green {
-	color: hsl(120, 70%, 50%);
-}
+#output-binary .bit-green { color: hsl(120, 70%, 70%); }
+#output-binary .bit-green.bit-significant { color: hsl(120, 70%, 50%); }
 
-#output-binary .bit-blue {
-	color: hsl(240, 70%, 50%);
-}
+#output-binary .bit-blue { color: hsl(240, 70%, 70%); }
+#output-binary .bit-blue.bit-significant { color: hsl(240, 70%, 50%); }
