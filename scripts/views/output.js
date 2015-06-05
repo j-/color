@@ -2,11 +2,14 @@
 
 App.OutputView = App.BaseView.extend({
 	init: function () {
-		this.listenTo(this.watch.property('color'), 'change', this.changeColor);
-		this.binaryView = this.addChildView(App.BinaryView, { watch: this.watch.property('color') });
+		var colorProperty = this.watch.property('color');
+		this.listenTo(colorProperty, 'change', this.changeColor);
+		this.binaryView = this.addChildView(App.BinaryView, { watch: colorProperty });
+		this.previewThumbnailView = this.addChildView(App.PreviewThumbnailView, { watch: colorProperty });
 	},
 	render: function () {
 		this.binaryView.setElement('#output-binary');
+		this.previewThumbnailView.setElement('#output-preview');
 		this.sup('render');
 	},
 	start: function () {
@@ -19,7 +22,6 @@ App.OutputView = App.BaseView.extend({
 		var rgb = Color.getRGBArray(color);
 		var hsl = Color.getHSLArray(color);
 		var cmyk = Color.getCMYKArray(color);
-		this.$('#output-preview').css('background-color', color);
 		this.$('#output-decimal').val(Number(color));
 		this.$('#output-red').val(rgb[Color.R]);
 		this.$('#output-red-ratio').val(rgb[Color.R] / 0xff);
