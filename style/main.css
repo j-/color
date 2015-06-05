@@ -2,6 +2,19 @@ body {
 	padding-bottom: 200px;
 }
 
+#input-panel {
+	display: flex;
+}
+
+#color-input {
+	flex: 0.9;
+}
+
+#randomize-color {
+	flex: 0.1;
+	margin-left: 15px;
+}
+
 .output-row {
 	display: flex;
 	margin: 2px 0;
