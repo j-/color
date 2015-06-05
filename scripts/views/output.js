@@ -45,6 +45,7 @@ App.OutputView = App.BaseView.extend({
 		this.$('#output-string-rgba-percentage').val(Color.formatRGBAPercentString(color));
 		this.$('#output-string-hsl').val(Color.formatHSLString(color));
 		this.$('#output-string-hsla').val(Color.formatHSLAString(color));
+		this.$('#output-string-keyword').val(Color.getClosestKeyword(color));
 	}
 });
 
