@@ -60,6 +60,7 @@ body {
 #output-binary {
 	font-family: monospace;
 	overflow: hidden;
+	cursor: default;
 }
 
 #output-binary .bit-red { color: hsl(0, 70%, 70%); }
