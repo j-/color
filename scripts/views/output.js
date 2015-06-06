@@ -35,10 +35,10 @@ App.OutputView = App.BaseView.extend({
 		this.$('#output-saturation-ratio').val(hsl[Color.S]);
 		this.$('#output-lightness').val(hsl[Color.L] * 100);
 		this.$('#output-lightness-ratio').val(hsl[Color.L]);
-		this.$('#output-cyan').val(cmyk[Color.C] / Color.CHANNEL_MAX * 100);
-		this.$('#output-magenta').val(cmyk[Color.M] / Color.CHANNEL_MAX * 100);
-		this.$('#output-yellow').val(cmyk[Color.Y] / Color.CHANNEL_MAX * 100);
-		this.$('#output-key').val(cmyk[Color.K] / Color.CHANNEL_MAX * 100);
+		this.$('#output-cyan').val(cmyk[Color.C]);
+		this.$('#output-magenta').val(cmyk[Color.M]);
+		this.$('#output-yellow').val(cmyk[Color.Y]);
+		this.$('#output-key').val(cmyk[Color.K]);
 		this.$('#output-string-hex').val(Color.formatHexString(color));
 		this.$('#output-string-hexshort').val(Color.formatShortHexString(color));
 		this.$('#output-string-rgb').val(Color.formatRGBString(color));
