@@ -20,11 +20,15 @@ App.AppView = App.BaseView.extend({
 		this.listenTo(this.inputView, 'change', this.handleInputChange);
 		this.listenTo(this.watch, 'change', this.handleColorChange);
 		_.bindAll(this, 'randomizeColor');
+		this.updateFavicon();
 	},
 	handleInputChange: function (value) {
 		this.trigger('change:input', value);
 	},
 	handleColorChange: function () {
+		this.updateFavicon();
+	},
+	updateFavicon: function () {
 		document.head.appendChild(this.iconView.el);
 	},
 	randomizeColor: function () {
