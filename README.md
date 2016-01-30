@@ -1,4 +1,4 @@
-# [Color](http://j-.github.io/color/)
+# [Color](https://skeoh.com/color/)
 
 Color app for manipulating and formatting color values.
 
